@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 
     <link href="./assets/style/style.css" rel="stylesheet">
-  
     <title>Weather Dashboard</title>
+
 </head>
 
 <body class="flex-column min-100-vh">
@@ -18,21 +18,33 @@
     </header>
 
     <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-3">
+        <nav class="col-12 col-md-3">
     <div class="form">
         <form class="form-body">
             <h2>Search for a city: </h2>
-         
-            <input class="search" type="text" placeholder="San Diego"/>
-        
+            <input name="city" id="city" class="search" type="text" placeholder="San Diego"/>
             <div>
-            <button type="submit" class="btn">search</button>
+            <button type="submit" id="search" class="button">search</button>
         </div>
         </form>
     </div>
-</div>
+</nav>
 
-<div class="box col-12 col-md-9">
+<div class="box col-12 col-md-9 ">
+    <div class="row today p-2 mt-2 d-block">
+        <h4 id="today-header">
+            <span></span>
+            <span></span>
+            <span></span>
+        </h4>
+        <div class="forecast">
+            <div class="cityName">City: </div>
+        <div class="temp">Temp: </div>
+        <div class="wind">Wind: </div>
+        <div class="humidity">Humidity: </div>
+        <div class="uv-index">UV Index: </div>
+    </div>
+    </div>
 
 </div>
     </main>

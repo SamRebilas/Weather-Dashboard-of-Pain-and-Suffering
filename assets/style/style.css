@@ -43,6 +43,11 @@
    
    
   }
+  .input{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
   .btn{
     background-color: #0b83c9; /* Green */
     border: none;
@@ -55,9 +60,33 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 330px;
+   
     
   }
   .search{
     width: 400px
+  }
+  .temp{
+    margin-bottom: 20px;
+    font-size: large;
+  }
+  .wind{
+    margin-bottom: 20px;
+    font-size: large;
+
+  }
+  .humidity{
+    margin-bottom: 20px;
+    font-size: large;
+
+  }
+  .uv-index{
+    margin-bottom: 20px;
+    font-size: large;
+
+  }
+  .cityName{
+    margin-bottom: 20px;
+    font-size: large;
   }
   
