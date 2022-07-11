@@ -17,22 +17,32 @@
         <h1 >Weather Dashboard</h1>
     </header>
 <main>
-<div class="card">
+<div class="card col-12 col-md-3">
+    <h1>Search for a City:</h1>
+    <div class="date" id="date"></div>
     <div class="search">
         <input type="text" class="search-bar" placeholder="search">
         <button class="btn">search</button>
     </div>
-    <div class="weather">
-        <h2 class="city">Weather placeholder</h2>
-        <div class="temp">temp placeholder</div>
-        <img src="" alt="" class="icon" />
-        <div class="description">description placeholder</div>
-        <div class="humidity">humidity placeholder</div>
-        <div class="wind">wind placeholder</div>
-        <div class="uv-index">uv placeholder</div>
-    </div>
+    
+</div>
+<div class="weather col-12 col-md-9">
+    <h2 class="city"></h2>
+    
+    <div class="temp"></div>
+    <div class="humidity"></div>
+    <div class="wind"></div>
+    <div class="uv-index"></div>
 </div>
 
+<div class="5day">
+
+<card class="day1 col-12 col-md-1" id="day1">
+
+
+</card>
+
+</div>
 </main>
 
   
@@ -41,5 +51,6 @@
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
