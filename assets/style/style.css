@@ -150,3 +150,16 @@ h4{
   font-weight: bold;
   font-size: large;
 }
+.historyBtn{
+  background-color: #0b83c9; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 330px;
+}

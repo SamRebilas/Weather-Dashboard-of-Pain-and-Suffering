@@ -1,6 +1,7 @@
-//var Day1 = document.getElementById("#day1")
+
 
 const apiKey =  "2eaaf63cfb416bf2e134c49946bd1b16"
+//date displayed on main screen
 var startDate = moment()
 $(document).ready(function(){
     $("#date").text( moment().format('ddd MMM Do, YYYY'))
@@ -10,6 +11,7 @@ $(document).ready(function(){
     $("#date0").text( moment().format('ddd MMM Do, YYYY'))
 }
 )
+//current weather function pulled from api
 function weather (city){
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
     + city +"&appid=" + apiKey + "&units=imperial"
@@ -31,25 +33,26 @@ document.querySelector(".humidity").innerHTML = "Humidity: " + humidity + "%"
 var icon = data.weather[0].icon
 document.querySelector(".uv-index").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
 
-  // localStorage.setItem(name)
-  // localStorage.getItem(name)
+//local storage
+var retrievedName = JSON.parse(localStorage.getItem("city name" ))
+localStorage.setItem("city name", JSON.stringify(name), "[]")
+
+console.log(retrievedName)
 }
     function search(){
        weather(document.querySelector(".search-bar").value)
     }
     
-    
 document.querySelector(".btn").addEventListener("click", function(){
     search()
 })
 
-
+//day 1 on the 5 day forecast
 function Day1 (city){
     fetch("https://api.openweathermap.org/data/2.5/forecast/?q="+ city +"&exclude=hourly,minutely,alert&appid=fe72ff1e0807d8c0c9ece9b274326ff1&units=imperial")
     
     .then((response)=> response.json())
     .then((data)=> displayDay1(data))
-  
 
 }
 function displayDay1(data){
@@ -64,22 +67,17 @@ function displayDay1(data){
     document.querySelector(".wind1").innerHTML = "Wind speed: " + speed + "MPH"
     var icon = data.list[i+2].weather[0].icon
     document.querySelector(".uv-index1").src = "http://openweathermap.org/img/wn/"  + icon + ".png"
-
-    console.log(dt_txt)
-    console.log (temp)
 }}
-
-
-    {
     function search1(){
         Day1(document.querySelector(".search-bar").value)
     }
-    }
+    
     document.querySelector(".btn").addEventListener("click", function(){
         search1()
     })
 
 
+//day 2
     function Day2 (city){
         fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&appid=fe72ff1e0807d8c0c9ece9b274326ff1&units=imperial")
         
@@ -88,7 +86,7 @@ function displayDay1(data){
     }
 
     function displayDay2(data){
-        for(i=0;i<5;i++){
+        for(var i=0;i<5;i++){
         var dt_txt=data.list[i+10].dt_txt
        document.querySelector(".date2").innerHTML = "Date: " + dt_txt
         var temp = data.list[i+10].main.temp
@@ -100,27 +98,25 @@ function displayDay1(data){
         var icon = data.list[i+10].weather[0].icon
         document.querySelector(".uv-index2").src = "http://openweathermap.org/img/wn/"  + icon + ".png"
     }}
-        
-    
-    {
     function search2(){
         Day2(document.querySelector(".search-bar").value)
     }
-    }
+    
     document.querySelector(".btn").addEventListener("click", function(){
         search2()
     })
 
 
+//day 3
     function Day3 (city){
         fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&appid=fe72ff1e0807d8c0c9ece9b274326ff1&units=imperial&exclude=hourly,minutely,alert")
         
         .then((response)=> response.json())
-        .then((data)=> this.displayDay3(data))
+        .then((data)=> displayDay3(data))
     }
 
     function displayDay3(data){
-        for(i=0;i<5;i++){
+        for(var  i=0;i<5;i++){
         var dt_txt=data.list[i+18].dt_txt
        document.querySelector(".date3").innerHTML = "Date: " + dt_txt
         var temp = data.list[i+18].main.temp
@@ -134,11 +130,11 @@ function displayDay1(data){
     }}
         
     
-    {
+    
     function search3(){
         Day3(document.querySelector(".search-bar").value)
     }
-    }
+    
     document.querySelector(".btn").addEventListener("click", function(){
         search3()
     })
@@ -146,12 +142,12 @@ function displayDay1(data){
         fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&appid=fe72ff1e0807d8c0c9ece9b274326ff1&units=imperial&exclude=hourly,minutely,alert")
         
         .then((response)=> response.json())
-        .then((data)=> this.displayDay4(data))
+        .then((data)=> displayDay4(data))
     }
 
-
+//day 4
     function displayDay4(data){
-        for(i=0;i<5;i++){
+        for(var i=0;i<5;i++){
         var dt_txt=data.list[i+26].dt_txt
         document.querySelector(".date4").innerHTML = "Date: " + dt_txt
         var temp = data.list[i+26].main.temp
@@ -164,11 +160,8 @@ function displayDay1(data){
         document.querySelector(".uv-index4").src = "http://openweathermap.org/img/wn/"  + icon + ".png"
     }}
         
-    
-    {
     function search4(){
         Day4(document.querySelector(".search-bar").value)
-    }
     }
     document.querySelector(".btn").addEventListener("click", function(){
         search4()
@@ -181,8 +174,9 @@ function displayDay1(data){
     }
 
 
+    //day 5
     function displayDay5(data){
-        for(i=0;i<5;i++){
+        for(var i=0;i<5;i++){
         var dt_txt=data.list[i+34].dt_txt
        document.querySelector(".date5").innerHTML = "Date: " + dt_txt
         var temp = data.list[i+34].main.temp
@@ -194,12 +188,9 @@ function displayDay1(data){
         var icon = data.list[i+34].weather[0].icon
         document.querySelector(".uv-index5").src = "http://openweathermap.org/img/wn/"  + icon + ".png"
     
-        }
-    }
-    {
+    }}
     function search5(){
         Day5(document.querySelector(".search-bar").value)
-    }
     }
     document.querySelector(".btn").addEventListener("click", function(){
         search5()
